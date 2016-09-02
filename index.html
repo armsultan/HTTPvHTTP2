@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HTTP2 Test Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--[if lt IE 9]><script src="/js/html5shiv-printshiv.js" media="all"></script><![endif]-->
+    
+    <script src="/js/performance.js" media="all"></script>
+    <!-- Google Fonts -->
+<link rel="stylesheet" href="/css/fonts.css">
+
+<!-- CSS Reset -->
+<link rel="stylesheet" href="/css/normalize.css">
+
+<!-- Milligram CSS minified -->
+<link rel="stylesheet" href="/css/milligram_v2.css">
+    
+</head>
+<body onload='showtimes()'>
+    
+    <div class="container">
+        
+        <div class="row">
+    <div class="column"><h1>HTTP1 v HTTP2 Test Website</h1>
+
+            </div></div></div>
+    
+    
+     
+    <div class="container">
+        
+        <div class="row">
+    <div class="column">
+    
+    <h3>Sample image files</h3>
+  
+  <div id="sample">
+        HTTP/1 Sample files:  
+          <script>
+            document.write('<a href="http://'+ window.location.hostname+'/img/surfer_405KB.jpg">[405KB]</a> | ');
+            document.write('<a href="http://'+ window.location.hostname+'/img/rooster_1MB.jpg">[1MB]</a> | ');
+            document.write('<a href="http://'+ window.location.hostname+'/img/rflowers_1-9MB.jpg">[1.9MB]</a> | ');
+            document.write('<a href="http://'+ window.location.hostname+'/img/tropical_depression_10-9MB.jpg">[10.9MB]</a>');
+          </script>
+              </div>
+
+    
+
+    <div id="sample2">
+         HTTP/2 Sample files:  
+          <script>
+            document.write('<a href="https://'+ window.location.hostname+'/img/surfer_405KB.jpg">[405KB]</a> | ');
+            document.write('<a href="https://'+ window.location.hostname+'/img/rooster_1MB.jpg">[1MB]</a> | ');
+            document.write('<a href="https://'+ window.location.hostname+'/img/flowers_1-9MB.jpg">[1.9MB]</a> | ');
+            document.write('<a href="https://'+ window.location.hostname+'/img/tropical_depression_10-9MB.jpg">[10.9MB]</a>');
+          </script>
+    </div>
+        
+    </div>
+  </div>
+          </div>
+
+        
+        
+            <div class="container">
+
+        
+                    <div class="column">
+        
+                            <h2>500 images</h2>
+
+                        
+                         <p>Compare load times of the unsecure HTTP and encrypted HTTPS versions of this page. Each test loads 500 unique, non-cached images (2KB each, 1MB total). Run each test 3-5 times in a new private/incognito browsing session each time for determine average..</p>
+                        
+                        <strong>Compare the two:</strong>
+        <script>
+            
+                //    if (window.location.protocol !== 'https:') {
+            //}
+        document.write('<a href="http://'+ window.location.hostname + window.location.pathname + window.location.hash + '">HTTP</a> | '); 
+
+            
+        document.write('<a href="https://'+ window.location.hostname + window.location.pathname + window.location.hash + '">HTTPS</a>'); 
+
+
+            </script>
+
+                        
+                    </div>
+
+        
+        <div class="row">
+            <div class="column">
+
+                
+                <p><div id='loadtimes'></div></p>
+            
+                
+            <span><img src="/img/happy.jpg?123456789_1" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_2" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_3" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_4" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_5" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_6" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_7" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_8" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_9" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_10" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_11" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_12" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_13" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_14" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_15" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_16" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_17" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_18" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_19" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_20" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_21" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_22" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_23" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_24" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_25" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_26" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_27" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_28" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_29" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_30" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_31" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_32" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_33" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_34" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_35" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_36" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_37" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_38" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_39" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_40" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_41" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_42" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_43" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_44" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_45" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_46" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_47" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_48" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_49" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_50" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_51" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_52" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_53" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_54" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_55" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_56" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_57" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_58" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_59" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_60" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_61" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_62" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_63" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_64" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_65" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_66" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_67" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_68" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_69" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_70" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_71" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_72" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_73" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_74" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_75" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_76" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_77" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_78" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_79" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_80" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_81" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_82" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_83" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_84" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_85" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_86" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_87" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_88" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_89" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_90" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_91" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_92" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_93" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_94" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_95" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_96" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_97" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_98" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_99" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_100" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_101" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_102" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_103" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_104" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_105" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_106" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_107" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_108" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_109" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_110" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_111" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_112" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_113" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_114" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_115" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_116" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_117" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_118" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_119" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_120" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_121" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_122" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_123" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_124" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_125" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_126" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_127" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_128" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_129" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_130" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_131" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_132" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_133" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_134" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_135" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_136" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_137" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_138" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_139" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_140" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_141" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_142" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_143" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_144" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_145" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_146" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_147" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_148" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_149" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_150" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_151" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_152" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_153" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_154" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_155" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_156" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_157" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_158" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_159" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_160" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_161" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_162" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_163" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_164" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_165" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_166" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_167" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_168" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_169" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_170" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_171" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_172" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_173" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_174" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_175" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_176" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_177" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_178" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_179" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_180" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_181" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_182" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_183" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_184" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_185" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_186" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_187" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_188" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_189" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_190" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_191" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_192" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_193" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_194" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_195" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_196" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_197" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_198" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_199" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_200" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_201" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_202" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_203" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_204" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_205" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_206" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_207" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_208" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_209" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_210" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_211" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_212" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_213" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_214" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_215" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_216" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_217" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_218" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_219" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_220" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_221" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_222" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_223" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_224" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_225" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_226" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_227" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_228" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_229" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_230" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_231" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_232" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_233" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_234" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_235" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_236" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_237" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_238" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_239" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_240" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_241" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_242" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_243" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_244" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_245" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_246" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_247" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_248" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_249" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_250" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_251" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_252" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_253" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_254" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_255" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_256" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_257" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_258" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_259" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_260" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_261" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_262" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_263" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_264" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_265" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_266" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_267" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_268" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_269" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_270" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_271" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_272" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_273" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_274" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_275" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_276" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_277" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_278" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_279" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_280" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_281" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_282" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_283" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_284" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_285" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_286" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_287" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_288" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_289" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_290" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_291" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_292" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_293" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_294" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_295" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_296" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_297" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_298" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_299" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_300" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_301" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_302" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_303" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_304" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_305" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_306" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_307" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_308" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_309" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_310" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_311" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_312" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_313" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_314" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_315" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_316" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_317" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_318" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_319" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_320" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_321" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_322" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_323" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_324" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_325" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_326" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_327" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_328" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_329" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_330" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_331" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_332" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_333" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_334" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_335" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_336" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_337" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_338" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_339" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_340" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_341" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_342" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_343" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_344" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_345" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_346" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_347" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_348" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_349" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_350" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_351" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_352" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_353" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_354" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_355" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_356" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_357" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_358" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_359" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_360" /></a></span>
+		<span><img src="/img/happy.jpg?123456789_361" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_362" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_363" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_364" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_365" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_366" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_367" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_368" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_369" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_370" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_371" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_372" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_373" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_374" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_375" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_376" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_377" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_378" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_379" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_380" /></a></span>	
+		<span><img src="/img/happy.jpg?123456789_381" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_382" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_383" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_384" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_385" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_386" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_387" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_388" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_389" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_390" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_391" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_392" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_393" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_394" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_395" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_396" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_397" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_398" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_399" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_400" /></a></span>      
+		<span><img src="/img/happy.jpg?123456789_401" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_402" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_403" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_404" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_405" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_406" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_407" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_408" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_409" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_410" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_411" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_412" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_413" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_414" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_415" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_416" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_417" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_418" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_419" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_420" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_421" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_422" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_423" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_424" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_425" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_426" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_427" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_428" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_429" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_430" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_431" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_432" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_433" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_434" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_435" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_436" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_437" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_438" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_439" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_440" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_441" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_442" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_443" /></a></span> 
+	    <span><img src="/img/happy.jpg?123456789_444" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_445" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_446" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_447" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_448" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_449" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_450" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_451" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_452" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_453" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_454" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_455" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_456" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_457" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_458" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_459" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_460" /></a></span>
+		<span><img src="/img/happy.jpg?123456789_461" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_462" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_463" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_464" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_465" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_466" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_467" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_468" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_469" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_470" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_471" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_472" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_473" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_474" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_475" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_476" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_477" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_478" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_479" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_480" /></a></span>	
+		<span><img src="/img/happy.jpg?123456789_481" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_482" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_483" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_484" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_485" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_486" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_487" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_488" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_489" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_490" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_491" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_492" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_493" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_494" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_495" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_496" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_497" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_498" /></a></span> 
+		<span><img src="/img/happy.jpg?123456789_499" /></a></span> 
+        <span><img src="/img/happy.jpg?123456789_500" /></a></span> 
+                
+
+<script>
+function showtimes() {
+	var times = '<strong>Times from connection start:</strong><br>'
+	times += '<code>DOM loaded</code>: ' + (window.performance.timing.domContentLoadedEventEnd - window.performance.timing.connectStart) + 'ms<br>'
+	times += '<code>DOM complete</code> (images, etc. loaded) : ' + (window.performance.timing.domComplete - window.performance.timing.connectStart) + 'ms<br><a href="#load_times">What are these load times?</a>'
+	document.getElementById('loadtimes').innerHTML = times
+}
+</script>
+
+
+<div class="container">
+        
+        <div class="row">
+    <div id="load_times" class="column">
+     
+        <h5>Load times</h5>
+        
+<p>
+<strong>DOM Loaded</strong> - The initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
+</p>
+        <p>
+<strong>DOM Complete</strong> - The time represents the end of the browser processing a document. The browser has received the document, processed it and has done the same for the page resources like images, CSS and JavaScript.
+        
+        <ol>
+  <li>To the End user, this is the point where the browser completes loading (progress bar or spinner stops spinning)</li>
+  <li>To a developer, this marks the beginning of the time to add additional application logic (i.e. Javascript)</li>
+</ol>
+       </p>
+        
+</div>
+        </div>
+  
+
+
+
+  </div>
+
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 **Website to test HTTP and HTTP2**
-
+-----
 A Static Website to test the download times of large images and hundreds of HTTP requests over HTTP1 and HTTP2
 
 Hope to add more tests later...
@@ -35,6 +35,6 @@ Now you should see h2 (which stands for HTTP/2) in a new column for your website
 When inspecting a request's HTTP headers, you will also see the header value X-Firefox-Spdy: h2 
 
 **Image Credit:**
-Flowers:https://unsplash.com/@charlieharutaka
-Rooster:https://unsplash.com/@heytowner
-Surfer: https://unsplash.com/@seefromthesky
+ - Surfer: https://unsplash.com/@seefromthesky
+ - Rooster:https://unsplash.com/@heytowner
+ - Flowers:https://unsplash.com/@charlieharutaka

@@ -6,6 +6,9 @@ Hope to add more tests later...
 
 Web performance tools
 -----
+
+First, it's beneficial to test with Latency, either with a Wan Emulator tools or accessing the web content over the internet, over real network latency
+
 To confirm HTTP/2 is faster you can use various web performance measurement tools:
 
 **Client Side Tools:**

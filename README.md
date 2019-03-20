@@ -42,7 +42,7 @@ When inspecting a request's HTTP headers, you will also see the header value `X-
 ### CSS
  - [Milligram](https://milligram.io/) - A minimalist CSS framework 
 
-### Image Credit
+### Images
  - Surfer: https://unsplash.com/@seefromthesky
  - Rooster:https://unsplash.com/@heytowner
  - Flowers:https://unsplash.com/@charlieharutaka
